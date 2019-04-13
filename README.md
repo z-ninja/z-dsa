@@ -9,7 +9,7 @@ Shamir's secret threshold and Lamport signature schema.
 GOAL
 Keep security while reducing keys and signature size.
 
-I am not an expert, but I would like to see opinions if experianced persons about my work.
+I am not an expert, but I would like to see opinions if experienced persons about my work.
 
 
 INSTALL
