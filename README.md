@@ -6,10 +6,11 @@ One time signature schema.
 INSPIRAITON:
 Shamir's secret threshold and Lamport signature schema.
 
-GOAL
-Keep security while reducing keys and signature size.
+GOAL:Keep security while reducing keys and signature size.
 
+WARNING: Do not use this in production yet. It is not tested enough.
 I am not an expert, but I would like to see opinions if experienced persons about my work.
+
 
 
 INSTALL
