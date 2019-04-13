@@ -69,7 +69,7 @@ with HASH_COUNT shares and MIN_SHARE_COUNT threshold.
 
 Each share must be CELL_SIZE_L+1 size in bytes.
 
-To create private key from shares we exclude first byte of each share and join all shares together.
+To create private key from shares we exclude first byte(since it is just an index of share) of each share and join all shares together.
 
 That is Allice private key.
 
