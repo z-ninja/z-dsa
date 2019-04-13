@@ -10,7 +10,7 @@ Shamir's secret threshold and Lamport signature schema.
 Keep security while reducing keys and signature size.
 
 # WARNING: Do not use this in production yet. It is not tested enough.
-I am not an expert, but I would like to see opinions if experienced persons about my work.
+I am not an expert, but I would like to see opinion if experienced persons about this.
 
 
 
