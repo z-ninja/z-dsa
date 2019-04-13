@@ -126,7 +126,7 @@ So if Bob realize that all Pk[I] = HS(S[NUM]|Nonce) equals, signature is valid.
 
 
 
-Hope I was expalined good enough. Since I do better with code then with explaining what codes do.
+Hope I expalined good enough. Since I do better with code then with explaining what codes do.
 
 
 
