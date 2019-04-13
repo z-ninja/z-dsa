@@ -59,7 +59,9 @@ MIN_SHARE_COUNT = MIN_SHARE_COUNT = round(HASH_COUNT/100*SHARE_COEFFICIENT) - 14
 
 
 
+
 KEY CREATION
+
 Allice will generate random bytes (Nonce) of CELL_SIZE_L size and will generate Shamir's threshold share 
 
 with HASH_COUNT shares and MIN_SHARE_COUNT threshold.
