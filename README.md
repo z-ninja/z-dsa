@@ -56,7 +56,7 @@ SIGNATURE_BYTES = CELL_SIZE_L * CELL_SIZE_L /// size of signature in bytes - 102
 
 SHARE_COEFFICIENT= 22 // percent of minimum shares in percent
 
-MIN_SHARE_COUNT = MIN_SHARE_COUNT = round(HASH_COUNT/100*SHARE_COEFFICIENT) - 14 in our case
+MIN_SHARE_COUNT = round(HASH_COUNT/100*SHARE_COEFFICIENT) - 14 in our case
 
 
 
