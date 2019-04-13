@@ -4,9 +4,9 @@ const assert = require('assert')
 const tss_1 = require("@stablelib/tss");
 
   const CELL_SIZE_L = 32; /// 32 for sha256, 64 for sha512
-  const CELL_SIZE_S = 32; /// 16 for md5, 32 for sha256, 64 for sha512
+  const CELL_SIZE_S = 16; /// 16 for md5, 32 for sha256, 64 for sha512
   const HASH_COUNT = 64;/// max 255
-  const PRIVATE_KEY_BYTES = CELL_SIZE_L*HASH_COUNT;
+  const PRIVATE_KEY_BYTES = CELL_SIZE_L*HASH_COUNT; 
   const PUBLIC_KEY_BYTES = CELL_SIZE_S*HASH_COUNT;
   const SIGNATURE_BYTES = CELL_SIZE_L * CELL_SIZE_L;
   const SHARE_COEFFICIENT= 22;// from practice I have seen if hash_count is higher, this value should be smaller
@@ -58,7 +58,7 @@ const tss_1 = require("@stablelib/tss");
       if(nonce.length != CELL_SIZE_L){
 	throw new Error("Nonce must be "+(CELL_SIZE_L)+" size in bytes");
       }
-      console.log("min share",MIN_SHARE_COUNT,HASH_COUNT - MIN_SHARE_COUNT);
+      //console.log("min share",MIN_SHARE_COUNT,HASH_COUNT - MIN_SHARE_COUNT);
       // creating shamir's secret sahare ring for nonce, ring should be 
       // considered as private key simliar as lanport scheme
       var shares = tss_1.splitRaw(nonce, MIN_SHARE_COUNT, HASH_COUNT);
