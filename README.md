@@ -3,17 +3,18 @@ Z Digital Signature Algorithm - Hash Based
 
 One time signature schema.
 
-INSPIRAITON:
+# INSPIRAITON:
 Shamir's secret threshold and Lamport signature schema.
 
-GOAL:Keep security while reducing keys and signature size.
+# GOAL:
+Keep security while reducing keys and signature size.
 
-WARNING: Do not use this in production yet. It is not tested enough.
+# WARNING: Do not use this in production yet. It is not tested enough.
 I am not an expert, but I would like to see opinions if experienced persons about my work.
 
 
 
-INSTALL
+# INSTALL
 ```javascript
 npm i z-dsa
 ```
@@ -28,7 +29,7 @@ console.log("zdsa",keys.private.length,keys.public.length,signature.length);
 console.log(zdsa.verify(keys.public, msg, signature));
 ```
 
-How it works.
+# How it works.
 
 We need at least one hash function or two different.
 
@@ -59,7 +60,7 @@ MIN_SHARE_COUNT = MIN_SHARE_COUNT = round(HASH_COUNT/100*SHARE_COEFFICIENT) - 14
 
 
 
-KEY CREATION
+# KEY CREATION
 
 
 Allice will generate random bytes (Nonce) of CELL_SIZE_L size and will generate Shamir's threshold share 
@@ -78,7 +79,7 @@ That is Allice public key and she can share it with the world.
 
 
 
-SIGNATURE CREATION
+# SIGNATURE CREATION
 
 We will call first hash function as HL.
 
@@ -98,7 +99,7 @@ That is her signature.
 
 
 
-VERIFYING SIGNATURE
+# VERIFYING SIGNATURE
 
 We will call second hash function as HS.
 
