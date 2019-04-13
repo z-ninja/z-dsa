@@ -3,16 +3,37 @@ const crypto = require('crypto')
 const assert = require('assert')
 const tss_1 = require("@stablelib/tss");
 
-  const CELL_SIZE_L = 32; /// 32 for sha256, 64 for sha512
-  const CELL_SIZE_S = 16; /// 16 for md5, 32 for sha256, 64 for sha512
-  const HASH_COUNT = 64;/// max 255
-  const PRIVATE_KEY_BYTES = CELL_SIZE_L*HASH_COUNT; 
-  const PUBLIC_KEY_BYTES = CELL_SIZE_S*HASH_COUNT;
-  const SIGNATURE_BYTES = CELL_SIZE_L * CELL_SIZE_L;
-  const SHARE_COEFFICIENT= 22;// from practice I have seen if hash_count is higher, this value should be smaller
+module.exports = (options)=>{
+  options = options|| {};
+  var CELL_SIZE_L = options.CELL_SIZE_L?parseInt(options.CELL_SIZE_L):32; /// 32 for sha256, 64 for sha512
+  var CELL_SIZE_S = options.CELL_SIZE_S?parseInt(options.CELL_SIZE_S):16; /// 16 for md5, 32 for sha256, 64 for sha512
+  var HASH_COUNT = options.HASH_COUNT?parseInt(options.HASH_COUNT):64;/// max 255
+  var SHARE_COEFFICIENT= options.SHARE_COEFFICIENT?parseInt(options.SHARE_COEFFICIENT):22;// from practice I have seen if hash_count is higher, this value should be smaller
   /// about 22-10 where hash count is in range of 64-255
-  const MIN_SHARE_COUNT = Math.round(HASH_COUNT/100*SHARE_COEFFICIENT);
-  var most_unused = 0;
+  if(isNaN(CELL_SIZE_L)){
+    throw new Error("CELL_SIZE_L must be an number");
+  }
+  if(isNaN(CELL_SIZE_S)){
+    throw new Error("CELL_SIZE_S must be an number");
+  }
+  if(isNaN(HASH_COUNT)){
+    throw new Error("HASH_COUNT must be an number");
+  }
+  if(isNaN(SHARE_COEFFICIENT)){
+    throw new Error("SHARE_COEFFICIENT must be an number");
+  }
+  
+  if(CELL_SIZE_L*2<HASH_COUNT){
+    throw new Error("HASH_COUNT must be at least CELL_SIZE_L * 2");
+  }
+  
+  
+  
+  var PRIVATE_KEY_BYTES = CELL_SIZE_L*HASH_COUNT; 
+  var PUBLIC_KEY_BYTES = CELL_SIZE_S*HASH_COUNT;
+  var SIGNATURE_BYTES = CELL_SIZE_L * CELL_SIZE_L;
+  
+  var MIN_SHARE_COUNT = Math.round(HASH_COUNT/100*SHARE_COEFFICIENT);
   var algL;
   switch(CELL_SIZE_L){
     case 32:
@@ -149,13 +170,13 @@ const tss_1 = require("@stablelib/tss");
         throw err
       }
     };
-module.exports = {
+return {
  keyPairNew:keyPairNew,
  sign:sign,
  verify:verify
 };
   
-
+}
 
 
 

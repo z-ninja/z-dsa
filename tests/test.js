@@ -1,4 +1,4 @@
-const zdsa = require("../");
+const zdsa = require("../")();
 const crypto = require("crypto");
 
 var keys = zdsa.keyPairNew();

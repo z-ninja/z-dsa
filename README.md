@@ -20,7 +20,7 @@ npm i z-dsa
 ```
 Example
 ```javascript
-const zdsa = require("z-dsa");
+const zdsa = require("z-dsa")();
 const crypto = require("crypto");
 var keys = zdsa.keyPairNew();
 var msg = crypto.randomBytes(32);
