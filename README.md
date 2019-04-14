@@ -2,7 +2,7 @@
 Z Digital Signature Algorithm - Hash Based
 
 One time signature schema.
-
+Newer, more secure version can be found on https://github.com/z-ninja/z-dsa2
 # INSPIRAITON:
 Shamir's secret threshold and Lamport signature schema.
 
